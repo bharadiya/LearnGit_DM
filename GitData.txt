@@ -1,0 +1,293 @@
+Microsoft Windows [Version 10.0.22631.3593]
+(c) Microsoft Corporation. All rights reserved.
+
+C:\Users\poona>git --version
+git version 2.41.0.windows.1
+
+C:\Users\poona>cd C:\Users\poona\Desktop\LearnGit_DM
+
+C:\Users\poona\Desktop\LearnGit_DM>git init
+Initialized empty Git repository in C:/Users/poona/Desktop/LearnGit_DM/.git/
+
+C:\Users\poona\Desktop\LearnGit_DM>git --config global user.name="bharadiya"
+unknown option: --config
+usage: git [-v | --version] [-h | --help] [-C <path>] [-c <name>=<value>]
+           [--exec-path[=<path>]] [--html-path] [--man-path] [--info-path]
+           [-p | --paginate | -P | --no-pager] [--no-replace-objects] [--bare]
+           [--git-dir=<path>] [--work-tree=<path>] [--namespace=<name>]
+           [--config-env=<name>=<envvar>] <command> [<args>]
+
+C:\Users\poona\Desktop\LearnGit_DM>git config --global user.name="bharadiya"
+error: invalid key: user.name=bharadiya
+
+C:\Users\poona\Desktop\LearnGit_DM>git config --global user.name "bharadiya"
+
+C:\Users\poona\Desktop\LearnGit_DM>git config --global user.email "shashank.bharadiya@gmail.com"
+
+C:\Users\poona\Desktop\LearnGit_DM>git remote add origin https://github.com/bharadiya/LearnGit_DM.git
+
+C:\Users\poona\Desktop\LearnGit_DM>git remote -v
+origin  https://github.com/bharadiya/LearnGit_DM.git (fetch)
+origin  https://github.com/bharadiya/LearnGit_DM.git (push)
+
+C:\Users\poona\Desktop\LearnGit_DM>git status
+On branch master
+
+No commits yet
+
+Untracked files:
+  (use "git add <file>..." to include in what will be committed)
+        Firstfile.txt
+
+nothing added to commit but untracked files present (use "git add" to track)
+
+C:\Users\poona\Desktop\LearnGit_DM>clear
+'clear' is not recognized as an internal or external command,
+operable program or batch file.
+
+C:\Users\poona\Desktop\LearnGit_DM>git status
+On branch master
+
+No commits yet
+
+Untracked files:
+  (use "git add <file>..." to include in what will be committed)
+        Firstfile.txt
+
+nothing added to commit but untracked files present (use "git add" to track)
+
+C:\Users\poona\Desktop\LearnGit_DM>git add Firstfile.txt
+
+C:\Users\poona\Desktop\LearnGit_DM>git status
+On branch master
+
+No commits yet
+
+Changes to be committed:
+  (use "git rm --cached <file>..." to unstage)
+        new file:   Firstfile.txt
+
+
+C:\Users\poona\Desktop\LearnGit_DM>git commit -m "First file"
+[master (root-commit) db1f5b3] First file
+ 1 file changed, 1 insertion(+)
+ create mode 100644 Firstfile.txt
+
+C:\Users\poona\Desktop\LearnGit_DM>git status
+On branch master
+nothing to commit, working tree clean
+
+C:\Users\poona\Desktop\LearnGit_DM>git push origin master
+Enumerating objects: 3, done.
+Counting objects: 100% (3/3), done.
+Writing objects: 100% (3/3), 229 bytes | 229.00 KiB/s, done.
+Total 3 (delta 0), reused 0 (delta 0), pack-reused 0
+To https://github.com/bharadiya/LearnGit_DM.git
+ * [new branch]      master -> master
+
+C:\Users\poona\Desktop\LearnGit_DM>git status
+On branch master
+Changes not staged for commit:
+  (use "git add <file>..." to update what will be committed)
+  (use "git restore <file>..." to discard changes in working directory)
+        modified:   Firstfile.txt
+
+no changes added to commit (use "git add" and/or "git commit -a")
+
+C:\Users\poona\Desktop\LearnGit_DM>git commit -m "add second line"
+On branch master
+Changes not staged for commit:
+  (use "git add <file>..." to update what will be committed)
+  (use "git restore <file>..." to discard changes in working directory)
+        modified:   Firstfile.txt
+
+no changes added to commit (use "git add" and/or "git commit -a")
+
+C:\Users\poona\Desktop\LearnGit_DM>git add Firstfile.txt
+
+C:\Users\poona\Desktop\LearnGit_DM>git commit -m "add second line"
+[master 5d8a012] add second line
+ 1 file changed, 2 insertions(+), 1 deletion(-)
+
+C:\Users\poona\Desktop\LearnGit_DM>git log
+commit 5d8a012101f1224d22a70d24fa370331c57595ad (HEAD -> master)
+Author: bharadiya <shashank.bharadiya@gmail.com>
+Date:   Sat May 18 08:30:39 2024 +0530
+
+    add second line
+
+commit db1f5b37ea9af7812e049179c1da6b95cabd15bd (origin/master)
+Author: bharadiya <shashank.bharadiya@gmail.com>
+Date:   Sat May 18 08:27:16 2024 +0530
+
+    First file
+
+C:\Users\poona\Desktop\LearnGit_DM>git status
+On branch master
+Changes not staged for commit:
+  (use "git add <file>..." to update what will be committed)
+  (use "git restore <file>..." to discard changes in working directory)
+        modified:   Firstfile.txt
+
+no changes added to commit (use "git add" and/or "git commit -a")
+
+C:\Users\poona\Desktop\LearnGit_DM>git diff Firstfile.txt
+diff --git a/Firstfile.txt b/Firstfile.txt
+index 166dcfe..4257ee3 100644
+--- a/Firstfile.txt
++++ b/Firstfile.txt
+@@ -1,2 +1,2 @@
+ First line
+-second  line
+\ No newline at end of file
++second  line ,
+\ No newline at end of file
+
+C:\Users\poona\Desktop\LearnGit_DM>git status
+On branch master
+Changes not staged for commit:
+  (use "git add <file>..." to update what will be committed)
+  (use "git restore <file>..." to discard changes in working directory)
+        modified:   Firstfile.txt
+
+no changes added to commit (use "git add" and/or "git commit -a")
+
+C:\Users\poona\Desktop\LearnGit_DM>git add Firstfile.txt
+
+C:\Users\poona\Desktop\LearnGit_DM>git commit -m "add second line comma"
+[master 27fdb6a] add second line comma
+ 1 file changed, 1 insertion(+), 1 deletion(-)
+
+C:\Users\poona\Desktop\LearnGit_DM>git push origin master
+Enumerating objects: 8, done.
+Counting objects: 100% (8/8), done.
+Delta compression using up to 4 threads
+Compressing objects: 100% (2/2), done.
+Writing objects: 100% (6/6), 514 bytes | 257.00 KiB/s, done.
+Total 6 (delta 0), reused 0 (delta 0), pack-reused 0
+To https://github.com/bharadiya/LearnGit_DM.git
+   db1f5b3..27fdb6a  master -> master
+
+C:\Users\poona\Desktop\LearnGit_DM>git log
+commit 27fdb6a67481f2e485dc286d4d2d7f6544b6a367 (HEAD -> master, origin/master)
+Author: bharadiya <shashank.bharadiya@gmail.com>
+Date:   Sat May 18 08:34:16 2024 +0530
+
+    add second line comma
+
+commit 5d8a012101f1224d22a70d24fa370331c57595ad
+Author: bharadiya <shashank.bharadiya@gmail.com>
+Date:   Sat May 18 08:30:39 2024 +0530
+
+    add second line
+
+commit db1f5b37ea9af7812e049179c1da6b95cabd15bd
+Author: bharadiya <shashank.bharadiya@gmail.com>
+Date:   Sat May 18 08:27:16 2024 +0530
+
+    First file
+
+C:\Users\poona\Desktop\LearnGit_DM>git checkout -b Deiva
+Switched to a new branch 'Deiva'
+
+C:\Users\poona\Desktop\LearnGit_DM>git branch
+* Deiva
+  master
+
+C:\Users\poona\Desktop\LearnGit_DM>git log
+commit 27fdb6a67481f2e485dc286d4d2d7f6544b6a367 (HEAD -> Deiva, origin/master, master)
+Author: bharadiya <shashank.bharadiya@gmail.com>
+Date:   Sat May 18 08:34:16 2024 +0530
+
+    add second line comma
+
+commit 5d8a012101f1224d22a70d24fa370331c57595ad
+Author: bharadiya <shashank.bharadiya@gmail.com>
+Date:   Sat May 18 08:30:39 2024 +0530
+
+    add second line
+
+commit db1f5b37ea9af7812e049179c1da6b95cabd15bd
+Author: bharadiya <shashank.bharadiya@gmail.com>
+Date:   Sat May 18 08:27:16 2024 +0530
+
+    First file
+
+C:\Users\poona\Desktop\LearnGit_DM>git checkout master
+Switched to branch 'master'
+
+C:\Users\poona\Desktop\LearnGit_DM>git branch -d Deiva
+Deleted branch Deiva (was 27fdb6a).
+
+C:\Users\poona\Desktop\LearnGit_DM>git branch
+* master
+
+C:\Users\poona\Desktop\LearnGit_DM>git checkout -b temp
+Switched to a new branch 'temp'
+
+C:\Users\poona\Desktop\LearnGit_DM>git branch
+  master
+* temp
+
+C:\Users\poona\Desktop\LearnGit_DM>git status
+On branch temp
+Changes not staged for commit:
+  (use "git add <file>..." to update what will be committed)
+  (use "git restore <file>..." to discard changes in working directory)
+        modified:   Firstfile.txt
+
+no changes added to commit (use "git add" and/or "git commit -a")
+
+C:\Users\poona\Desktop\LearnGit_DM>git add Firstfile.txt
+
+C:\Users\poona\Desktop\LearnGit_DM>git commit -m "adding in temp branch"
+[temp 8d0d13a] adding in temp branch
+ 1 file changed, 2 insertions(+), 1 deletion(-)
+
+C:\Users\poona\Desktop\LearnGit_DM>git push origin master
+Everything up-to-date
+
+C:\Users\poona\Desktop\LearnGit_DM>git push origin temp
+Enumerating objects: 5, done.
+Counting objects: 100% (5/5), done.
+Delta compression using up to 4 threads
+Compressing objects: 100% (2/2), done.
+Writing objects: 100% (3/3), 321 bytes | 160.00 KiB/s, done.
+Total 3 (delta 0), reused 0 (delta 0), pack-reused 0
+remote:
+remote: Create a pull request for 'temp' on GitHub by visiting:
+remote:      https://github.com/bharadiya/LearnGit_DM/pull/new/temp
+remote:
+To https://github.com/bharadiya/LearnGit_DM.git
+ * [new branch]      temp -> temp
+
+C:\Users\poona\Desktop\LearnGit_DM>git checkout master
+Switched to branch 'master'
+
+C:\Users\poona\Desktop\LearnGit_DM>git pull
+remote: Enumerating objects: 1, done.
+remote: Counting objects: 100% (1/1), done.
+remote: Total 1 (delta 0), reused 0 (delta 0), pack-reused 0
+Unpacking objects: 100% (1/1), 892 bytes | 111.00 KiB/s, done.
+From https://github.com/bharadiya/LearnGit_DM
+   27fdb6a..fb7ea60  master     -> origin/master
+There is no tracking information for the current branch.
+Please specify which branch you want to merge with.
+See git-pull(1) for details.
+
+    git pull <remote> <branch>
+
+If you wish to set tracking information for this branch you can do so with:
+
+    git branch --set-upstream-to=origin/<branch> master
+
+
+C:\Users\poona\Desktop\LearnGit_DM>git pull origin master
+From https://github.com/bharadiya/LearnGit_DM
+ * branch            master     -> FETCH_HEAD
+Updating 27fdb6a..fb7ea60
+Fast-forward
+ Firstfile.txt | 3 ++-
+ 1 file changed, 2 insertions(+), 1 deletion(-)
+
+C:\Users\poona\Desktop\LearnGit_DM>
